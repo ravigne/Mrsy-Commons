@@ -1,7 +1,7 @@
 <resources>
-    <string name="package_name">com.goodwy.commons</string>
+    <string name="package_name">com.mrsy.commons</string>
     <string name="pro">Pro</string>
-    <string name="simple_commons">Goodwy Commons</string>
+    <string name="simple_commons">Mrsy Commons</string>
     <string name="progress">%1$s / %2$s</string>
     <string name="donate_url">https://play.google.com/store/apps/dev?id=8268163890866913014</string>
     <string name="thank_you_url">https://play.google.com/store/apps/dev?id=8268163890866913014</string>
@@ -27,7 +27,7 @@
     <!-- About -->
     <string name="two_string_placeholder">%1$s%2$s</string>
     <string name="my_website">\nhttps://play.google.com/store/apps/dev?id=8268163890866913014</string>
-    <string name="my_email">goodwy.dev@gmail.com</string>
+    <string name="my_email">mrsy.dev@gmail.com</string>
     <string name="my_fake_email">noreply@gmail.com</string>
     <string name="facebook">Facebook</string>
     <string name="reddit">Reddit</string>

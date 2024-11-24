@@ -8,11 +8,11 @@ plugins {
     `maven-publish`
 }
 
-group = "com.goodwy"
+group = "com.mrsy"
 version = "6.0.0"
 
 android {
-    namespace = "com.goodwy.commons"
+    namespace = "com.mrsy.commons"
 
     compileSdk = libs.versions.app.build.compileSDKVersion.get().toInt()
 
