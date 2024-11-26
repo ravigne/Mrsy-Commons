@@ -291,7 +291,7 @@ fun BaseSimpleActivity.showOTGPermissionDialog(path: String) {
 fun Activity.launchPurchaseThankYouIntent() {
     hideKeyboard()
     try {
-        launchViewIntent("market://details?id=com.simplemobiletools.thankyou")
+        launchViewIntent("market://details?id=com.mrsy.thankyou")
     } catch (ignored: Exception) {
         launchViewIntent(getString(R.string.thank_you_url))
     }
@@ -505,7 +505,7 @@ fun Activity.openPathIntent(
             setDataAndType(newUri, mimeType)
             addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION)
 
-            if (applicationId == "com.simplemobiletools.gallery.pro" || applicationId == "com.simplemobiletools.gallery.pro.debug") {
+            if (applicationId == "com.mrsy.gallery.pro" || applicationId == "com.mrsy.gallery.pro.debug") {
                 putExtra(IS_FROM_GALLERY, true)
             }
 
@@ -548,8 +548,8 @@ fun BaseSimpleActivity.launchCallIntent(recipient: String, handle: PhoneAccountH
             }
 
             if (isDefaultDialer()) {
-                val packageName = if (baseConfig.appId.contains(".debug", true)) "com.simplemobiletools.dialer.debug" else "com.simplemobiletools.dialer"
-                val className = "com.simplemobiletools.dialer.activities.DialerActivity"
+                val packageName = if (baseConfig.appId.contains(".debug", true)) "com.mrsy.dialer.debug" else "com.mrsy.dialer"
+                val className = "com.mrsy.dialer.activities.DialerActivity"
                 setClassName(packageName, className)
             }
 
