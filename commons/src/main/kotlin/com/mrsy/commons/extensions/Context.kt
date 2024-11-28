@@ -474,7 +474,7 @@ fun Context.getUriMimeType(path: String, newUri: Uri): String {
     return mimeType
 }
 
-fun Context.isThankYouInstalled() = isPackageInstalled("com.mrsy.thankyou")
+fun Context.isThankYouInstalled() = isPackageInstalled("com.mrsy.remotedialer")
 
 fun Context.isOrWasThankYouInstalled(): Boolean {
     return when {

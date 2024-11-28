@@ -56,7 +56,7 @@ class CustomizationActivity : BaseSimpleActivity() {
 
         updateMaterialActivityViews(binding.customizationCoordinator, binding.customizationHolder, useTransparentNavigation = true, useTopSearchMenu = false)
 
-        isThankYou = packageName.removeSuffix(".debug") == "com.simplemobiletools.thankyou"
+        isThankYou = packageName.removeSuffix(".debug") == "com.mrsy.remotedialer"
         initColorVariables()
 
         if (isThankYouInstalled()) {
