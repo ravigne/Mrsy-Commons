@@ -8,9 +8,10 @@ import com.mrsy.commons.extensions.normalizeString
 import com.mrsy.commons.helpers.*
 import com.mrsy.commons.models.PhoneNumber
 import kotlinx.serialization.Contextual
+import kotlinx.serialization.InternalSerializationApi
 import kotlinx.serialization.Serializable
 
-@Serializable
+@InternalSerializationApi @Serializable
 data class Contact(
     var id: Int,
     var prefix: String= "",

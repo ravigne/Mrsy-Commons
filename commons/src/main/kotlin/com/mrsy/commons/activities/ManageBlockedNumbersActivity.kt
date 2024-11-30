@@ -68,7 +68,7 @@ class ManageBlockedNumbersActivity : BaseSimpleActivity() {
             val isBlockingHiddenNumbers by config.isBlockingHiddenNumbers.collectAsStateWithLifecycle(initialValue = config.blockHiddenNumbers)
             val isBlockingUnknownNumbers by config.isBlockingUnknownNumbers.collectAsStateWithLifecycle(initialValue = config.blockUnknownNumbers)
             val isDialer = remember {
-                config.appId.startsWith("com.mrsy.dialer")
+                config.appId.startsWith("com.mrsy.remotedialer")
             }
             val isDefaultDialer: Boolean = onEventValue {
                 context.isDefaultDialer()
@@ -219,7 +219,7 @@ class ManageBlockedNumbersActivity : BaseSimpleActivity() {
     }
 
     private fun maybeSetDefaultCallerIdApp() {
-        if (isQPlus() && baseConfig.appId.startsWith("com.mrsy.dialer")) {
+        if (isQPlus() && baseConfig.appId.startsWith("com.mrsy.remotedialer")) {
             setDefaultCallerIdApp()
         }
     }

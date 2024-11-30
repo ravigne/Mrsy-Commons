@@ -548,8 +548,8 @@ fun BaseSimpleActivity.launchCallIntent(recipient: String, handle: PhoneAccountH
             }
 
             if (isDefaultDialer()) {
-                val packageName = if (baseConfig.appId.contains(".debug", true)) "com.mrsy.dialer.debug" else "com.mrsy.dialer"
-                val className = "com.mrsy.dialer.activities.DialerActivity"
+                val packageName = if (baseConfig.appId.contains(".debug", true)) "com.mrsy.remotedialer.debug" else "com.mrsy.remotedialer"
+                val className = "com.mrsy.remotedialer.activities.DialerActivity"
                 setClassName(packageName, className)
             }
 

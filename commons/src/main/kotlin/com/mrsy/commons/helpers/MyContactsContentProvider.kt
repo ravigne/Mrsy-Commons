@@ -10,11 +10,12 @@ import com.mrsy.commons.extensions.getStringValue
 import com.mrsy.commons.models.PhoneNumber
 import com.mrsy.commons.models.SimpleContact
 import com.mrsy.commons.models.contacts.Contact
+import kotlinx.serialization.InternalSerializationApi
 
 // used for sharing privately stored contacts in Simple Contacts with Simple Dialer, Simple SMS Messenger and Simple Calendar Pro
 class MyContactsContentProvider {
     companion object {
-        private const val AUTHORITY = "com.simplemobiletools.commons.contactsprovider"
+        private const val AUTHORITY = "com.mrsy.commons.contactsprovider"
         val CONTACTS_CONTENT_URI = Uri.parse("content://$AUTHORITY/contacts")
 
         const val FAVORITES_ONLY = "favorites_only"
@@ -29,7 +30,7 @@ class MyContactsContentProvider {
         fun getSimpleContacts(context: Context, cursor: Cursor?): ArrayList<SimpleContact> {
             val contacts = ArrayList<SimpleContact>()
             val packageName = context.packageName.removeSuffix(".debug")
-            if (packageName != "com.mrsy.dialer" && packageName != "com.mrsy.smsmessenger" && packageName != "com.simplemobiletools.calendar.pro") {
+            if (packageName != "com.mrsy.remotedialer" && packageName != "com.mrsy.smsmessenger" && packageName != "com.simplemobiletools.calendar.pro") {
                 return contacts
             }
 
@@ -62,10 +63,11 @@ class MyContactsContentProvider {
             return contacts
         }
 
+        @OptIn(InternalSerializationApi::class)
         fun getContacts(context: Context, cursor: Cursor?): ArrayList<Contact> {
             val contacts = ArrayList<Contact>()
             val packageName = context.packageName.removeSuffix(".debug")
-            if (packageName != "com.mrsy.dialer" && packageName != "com.mrsy.smsmessenger" && packageName != "com.simplemobiletools.calendar.pro") {
+            if (packageName != "com.mrsy.remotedialer" && packageName != "com.mrsy.smsmessenger" && packageName != "com.simplemobiletools.calendar.pro") {
                 return contacts
             }
 

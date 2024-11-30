@@ -46,6 +46,7 @@ import com.mrsy.commons.R
 import com.mrsy.commons.helpers.*
 import com.mrsy.commons.models.AlarmSound
 import com.mrsy.commons.models.BlockedNumber
+import kotlinx.serialization.InternalSerializationApi
 import java.io.File
 import java.text.SimpleDateFormat
 import java.util.*
@@ -986,9 +987,9 @@ fun Context.getCornerRadius() = resources.getDimension(R.dimen.rounded_corner_ra
 
 // we need the Default Dialer functionality only in Simple Dialer and in Simple Contacts for now
 fun Context.isDefaultDialer(): Boolean {
-    return if (!packageName.startsWith("com.mrsy.contacts") && !packageName.startsWith("com.mrsy.dialer")) {
+    return if (!packageName.startsWith("com.mrsy.contacts") && !packageName.startsWith("com.mrsy.remotedialer")) {
         true
-    } else if ((packageName.startsWith("com.mrsy.contacts") || packageName.startsWith("com.mrsy.dialer")) && isQPlus()) {
+    } else if ((packageName.startsWith("com.mrsy.contacts") || packageName.startsWith("com.mrsy.remotedialer")) && isQPlus()) {
         val roleManager = getSystemService(RoleManager::class.java)
         roleManager!!.isRoleAvailable(RoleManager.ROLE_DIALER) && roleManager.isRoleHeld(RoleManager.ROLE_DIALER)
     } else {
@@ -996,6 +997,7 @@ fun Context.isDefaultDialer(): Boolean {
     }
 }
 
+@OptIn(InternalSerializationApi::class)
 fun Context.getContactsHasMap(withComparableNumbers: Boolean = false, callback: (HashMap<String, String>) -> Unit) {
     ContactsHelper(this).getContacts(showOnlyContactsWithNumbers = true) { contactList ->
         val privateContacts: HashMap<String, String> = HashMap()
