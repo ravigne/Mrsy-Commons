@@ -198,7 +198,7 @@ class AboutActivity : ComponentActivity() {
         val separator = "------------------------------"
         val body = "$appVersion$newline$deviceOS$newline$separator$newline$newline"
 
-        val address = if (packageName.startsWith("com.simplemobiletools")) {
+        val address = if (packageName.startsWith("com.mrsy")) {
             getString(R.string.my_email)
         } else {
             getString(R.string.my_fake_email)
@@ -271,7 +271,7 @@ class AboutActivity : ComponentActivity() {
     }
 
     private fun onFacebookClick() {
-        var link = "https://www.facebook.com/simplemobiletools"
+        var link = "https://www.facebook.com/mrsy"
         try {
             packageManager.getPackageInfo("com.facebook.katana", 0)
             link = "fb://page/150270895341774"
@@ -296,12 +296,12 @@ class AboutActivity : ComponentActivity() {
 
 
     private fun onWebsiteClick() {
-        launchViewIntent("https://simplemobiletools.com/")
+        launchViewIntent("https://mrsy.com/")
     }
 
     private fun onPrivacyPolicyClick() {
-        val appId = baseConfig.appId.removeSuffix(".debug").removeSuffix(".pro").removePrefix("com.simplemobiletools.")
-        val url = "https://simplemobiletools.com/privacy/$appId.txt"
+        val appId = baseConfig.appId.removeSuffix(".debug").removeSuffix(".pro").removePrefix("com.mrsy.")
+        val url = "https://mrsy.com/privacy/$appId.txt"
         launchViewIntent(url)
     }
 

@@ -6,9 +6,9 @@ import com.mrsy.commons.models.SharedTheme
 
 class MyContentProvider {
     companion object {
-        private const val AUTHORITY = "com.simplemobiletools.commons.provider"
-        const val SHARED_THEME_ACTIVATED = "com.simplemobiletools.commons.SHARED_THEME_ACTIVATED"
-        const val SHARED_THEME_UPDATED = "com.simplemobiletools.commons.SHARED_THEME_UPDATED"
+        private const val AUTHORITY = "com.mrsy.commons.provider"
+        const val SHARED_THEME_ACTIVATED = "com.mrsy.commons.SHARED_THEME_ACTIVATED"
+        const val SHARED_THEME_UPDATED = "com.mrsy.commons.SHARED_THEME_UPDATED"
         val MY_CONTENT_URI = Uri.parse("content://$AUTHORITY/themes")
 
         const val COL_ID = "_id"    // used in Simple Thank You

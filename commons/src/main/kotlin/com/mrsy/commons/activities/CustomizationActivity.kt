@@ -543,7 +543,7 @@ class CustomizationActivity : BaseSimpleActivity() {
     }
 
     private fun pickPrimaryColor() {
-        if (!packageName.startsWith("com.simplemobiletools.", true) && baseConfig.appRunCount > 50) {
+        if (!packageName.startsWith("com.mrsy.", true) && baseConfig.appRunCount > 50) {
             finish()
             return
         }

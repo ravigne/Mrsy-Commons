@@ -46,7 +46,6 @@ import com.mrsy.commons.R
 import com.mrsy.commons.helpers.*
 import com.mrsy.commons.models.AlarmSound
 import com.mrsy.commons.models.BlockedNumber
-import kotlinx.serialization.InternalSerializationApi
 import java.io.File
 import java.text.SimpleDateFormat
 import java.util.*
@@ -997,7 +996,6 @@ fun Context.isDefaultDialer(): Boolean {
     }
 }
 
-@OptIn(InternalSerializationApi::class)
 fun Context.getContactsHasMap(withComparableNumbers: Boolean = false, callback: (HashMap<String, String>) -> Unit) {
     ContactsHelper(this).getContacts(showOnlyContactsWithNumbers = true) { contactList ->
         val privateContacts: HashMap<String, String> = HashMap()
